@@ -95,7 +95,6 @@ def insert_tweet(connection,tweet):
     This function is only partially implemented.
     You'll need to add appropriate SQL insert statements to get it to work.
     '''
-
     # skip tweet if it's already inserted
     sql=sqlalchemy.sql.text('''
     SELECT id_tweets 
@@ -338,6 +337,8 @@ def insert_tweet(connection,tweet):
                 ''')
             sql = sql.bindparams(id_tweets=tweet['id'], id_urls=id_urls, type=medium['type'])
             connection.execute(sql)
+        
+        trans.commit()
 
 ################################################################################
 # main functions
