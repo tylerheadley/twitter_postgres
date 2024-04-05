@@ -337,8 +337,6 @@ def insert_tweet(connection,tweet):
                 ''')
             sql = sql.bindparams(id_tweets=tweet['id'], id_urls=id_urls, type=medium['type'])
             connection.execute(sql)
-        
-        trans.commit()
 
 ################################################################################
 # main functions
