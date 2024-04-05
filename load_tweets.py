@@ -368,7 +368,6 @@ if __name__ == '__main__':
             for subfilename in sorted(archive.namelist(), reverse=True):
                 with io.TextIOWrapper(archive.open(subfilename)) as f:
                     for i,line in enumerate(f):
-                        print("call insert tweet")
                         # load and insert the tweet
                         tweet = json.loads(line)
                         insert_tweet(connection,tweet)
